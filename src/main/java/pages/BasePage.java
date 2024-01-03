@@ -27,13 +27,14 @@ public class BasePage {
         driver = new ChromeDriver();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--headless");
-        driver.manage().window().maximize();
-        driver.get(BASE_URL);                     //driver.navigate().to(BASE_URL);
         /*
         WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver(options);
         FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        driver = new FirefoxDriver(options);
         */
+        driver.manage().window().maximize();
+        driver.get(BASE_URL);                     //driver.navigate().to(BASE_URL);
     }
 
     @AfterMethod
