@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
 //import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -26,11 +27,12 @@ public class BasePage {
         driver = new ChromeDriver();
         //WebDriverManager.firefoxdriver().setup();
         //FirefoxOptions options = new FirefoxOptions();
-        //options.addArguments("--headless");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
         //driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
-        //driver.get(BASE_URL);
-        driver.navigate().to(BASE_URL);
+        driver.get(BASE_URL);
+        //driver.navigate().to(BASE_URL);
     }
 
     @AfterMethod
