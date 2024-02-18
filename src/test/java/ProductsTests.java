@@ -48,6 +48,16 @@ public class ProductsTests extends BasePage {
         productsPage.clickOnSearchButton();
         Assert.assertTrue(productsPage.checkTheDisplayedProducts(keyword));
     }
+
+    @DataProvider(name = "KeyProvider")
+    public Object[][] getDataFromDataProvider() {
+        return new Object[][]
+                {
+                        {"Alex"},
+                        {"Pizza"},
+                        {"Soft"}
+                };
+    }
     */
 
     //alternative for searchByAWordAndCheckTheResult using @Parameters:
@@ -286,16 +296,6 @@ public class ProductsTests extends BasePage {
         YourCartPage yourCartPage = new YourCartPage(driver);
         yourCartPage.clickDeleteProductButton();
         Assert.assertEquals(driver.findElement(By.cssSelector(".text-center.container")).getText(), "How about adding some products in your cart?");
-    }
-
-    @DataProvider(name = "KeyProvider")
-    public Object[][] getDataFromDataprovider() {
-        return new Object[][]
-                {
-                        {"Alex"},
-                        {"Pizza"},
-                        {"Soft"}
-                };
     }
 
     }
